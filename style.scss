@@ -140,6 +140,102 @@ main {
       }
     }
   }
+
+  section.view4 {
+    width: 100%;
+    @include flex-column(1rem);
+    padding: 1rem;
+
+    .top {
+      width: 100%;
+      img {
+        width: 100%;
+        border-radius: 0.7rem;
+      }
+    }
+    .bottom {
+      background-color: #1e1e1e;
+      border-radius: 0.7rem;
+      padding: 2.5rem;
+      @include flex-column(3rem);
+
+      .text {
+        @include flex-column(1.5rem);
+
+        h1 {
+          font-weight: 400;
+          font-size: 2.25rem;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+        }
+        .paragraphs {
+          p {
+            font-weight: 100;
+            font-size: 1.15rem;
+            opacity: 0.8;
+            line-height: 1.3;
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+  section.view5 {
+    @include flex-column(1rem);
+    width: 100%;
+    padding: 1rem;
+
+    .card {
+      border-radius: 0.7rem;
+      width: 100%;
+      aspect-ratio: 1/1;
+      background-size: cover;
+
+      @include flex-column(0rem);
+      justify-content: space-between;
+      padding: 1rem;
+
+      .icon,
+      .bottom {
+        background-color: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(8px) saturate(120%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0.7rem;
+      }
+      .top {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+      }
+      .icon {
+        width: fit-content;
+        border-radius: 50%;
+        padding: 0.7rem;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        :first-child {
+          font-size: 1.25rem;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+
+    #card1 {
+      background-image: url("./card1.webp");
+    }
+    #card2 {
+      background-image: url("./card2.webp");
+    }
+    #card3 {
+      background-image: url("./card3.webp");
+    }
+  }
 }
 
 // media query for responsiveness
@@ -166,6 +262,7 @@ main {
         }
       }
     }
+
     section.view2 {
       flex-direction: row;
 
@@ -175,6 +272,7 @@ main {
         }
       }
     }
+
     section.view3 {
       flex-direction: row-reverse;
       .top,
@@ -202,6 +300,35 @@ main {
       }
     }
 
-    
+    section.view4 {
+      flex-direction: row;
+      .top,
+      .bottom {
+        width: 50%;
+      }
+      .bottom {
+        padding: 3rem;
+        justify-content: space-between;
+
+        .text {
+          h1 {
+            font-size: 3rem;
+          }
+          .paragraphs {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            p {
+              font-size: 1.1rem;
+              letter-spacing: 0.1rem;
+            }
+          }
+        }
+      }
+    }
+
+    section.view5 {
+      flex-direction: row;
+    }
   }
 }
